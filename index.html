@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Primary Meta Tags -->
+    <title>Financial Calculator - Free SIP, Investment & Age Calculator | Plan Your Future</title>
+    <meta name="title" content="Financial Calculator - Free SIP, Investment & Age Calculator | Plan Your Future">
+    <meta name="description" content="Free online financial calculator tools for SIP planning, investment returns, and age calculations. Calculate your financial future with accurate SIP returns, lump sum investments, and detailed age breakdowns. Start planning today!">
+    <meta name="keywords" content="financial calculator, SIP calculator, investment calculator, age calculator, mutual fund calculator, retirement planning, financial planning, investment returns, compound interest calculator, systematic investment plan">
+    <meta name="author" content="Bapi Kirtania">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://yourwebsite.com/">
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yourwebsite.com/">
+    <meta property="og:title" content="Financial Calculator - Free SIP, Investment & Age Calculator">
+    <meta property="og:description" content="Free online financial calculator tools for SIP planning, investment returns, and age calculations. Plan your financial future with accurate calculations.">
+    <meta property="og:image" content="https://yourwebsite.com/images/financial-calculator-preview.jpg">
+    <meta property="og:site_name" content="Financial Calculator">
+    <meta property="og:locale" content="en_US">
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yourwebsite.com/">
+    <meta property="twitter:title" content="Financial Calculator - Free SIP, Investment & Age Calculator">
+    <meta property="twitter:description" content="Free online financial calculator tools for SIP planning, investment returns, and age calculations.">
+    <meta property="twitter:image" content="https://yourwebsite.com/images/financial-calculator-preview.jpg">
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="7 days">
+    <meta name="distribution" content="global">
+    <meta name="rating" content="general">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+    <!-- Performance Optimization -->
+    <meta name="theme-color" content="#4CAF50">
+    <meta name="msapplication-TileColor" content="#4CAF50">
+    <link rel="preconnect" href="https://cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="https://cdn.jsdelivr.net">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="manifest.json">
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/icons/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/icons/favicon-16x16.png">
+    
+    <!-- Resource Hints -->
+    <link rel="preload" href="styles.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/chart.js" as="script" crossorigin>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebApplication",
+      "name": "Financial Calculator",
+      "description": "Free online financial calculator tools for SIP planning, investment returns, and age calculations",
+      "url": "https://yourwebsite.com",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "Any",
+      "browserRequirements": "Requires JavaScript",
+      "softwareVersion": "1.0",
+      "author": {
+        "@type": "Person",
+        "name": "Bapi Kirtania",
+        "jobTitle": "Full Stack Developer"
+      },
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD",
+        "availability": "https://schema.org/InStock"
+      },
+      "featureList": [
+        "SIP Calculator",
+        "Investment Calculator", 
+        "Age Calculator",
+        "Compound Interest Calculator",
+        "Financial Planning Tools"
+      ]
+    }
+    </script>
+    
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <!-- Skip Navigation for Accessibility -->
+    <a href="#main-content" class="skip-nav">Skip to main content</a>
+    
+    <div class="container">
+        <!-- Header -->
+        <header class="header" role="banner">
+            <h1>Free Financial Calculator Tools</h1>
+            <p>Plan your investments and calculate your financial future with our comprehensive suite of free financial calculators including SIP, investment returns, and age calculations</p>
+            <div class="header-features">
+                <span class="feature-badge">Free to Use</span>
+                <span class="feature-badge">No Registration</span>
+                <span class="feature-badge">Instant Results</span>
+                <span class="feature-badge">Mobile Friendly</span>
+            </div>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs" role="navigation" aria-label="Calculator navigation">
+            <button class="tab-btn active" onclick="showCalculator('sip')" aria-pressed="true">SIP Calculator</button>
+            <button class="tab-btn" onclick="showCalculator('investment')" aria-pressed="false">One-Time Investment</button>
+            <button class="tab-btn" onclick="showCalculator('age')" aria-pressed="false">Age Calculator</button>
+        </nav>
+
+        <main id="main-content" role="main">
+
+        <!-- SIP Calculator -->
+        <section id="sip-calculator" class="calculator-section active" aria-labelledby="sip-heading">
+            <header>
+                <h2 id="sip-heading">SIP Calculator - Systematic Investment Plan Calculator</h2>
+                <p class="calculator-description">Calculate your SIP returns and plan your systematic investment journey. Our SIP calculator helps you estimate the future value of your monthly investments with compound interest calculations.</p>
+            </header>
+            <div class="calculator-content">
+                <form class="input-section" aria-label="SIP calculation inputs">
+                    <div class="input-group">
+                        <label for="sip-amount">Monthly Investment Amount (₹)</label>
+                        <input type="number" id="sip-amount" value="5000" min="100" step="100" aria-describedby="sip-amount-help">
+                        <small id="sip-amount-help">Enter your monthly SIP investment amount</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="sip-rate">Expected Annual Return Rate (%)</label>
+                        <input type="number" id="sip-rate" value="12" min="0.1" max="50" step="0.1" aria-describedby="sip-rate-help">
+                        <small id="sip-rate-help">Expected annual return percentage</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="sip-duration">Investment Duration (Years)</label>
+                        <input type="number" id="sip-duration" value="10" min="1" max="50" step="1" aria-describedby="sip-duration-help">
+                        <small id="sip-duration-help">Investment time period in years</small>
+                    </div>
+                </form>
+                <section class="result-section" aria-label="SIP calculation results">
+                    <div class="result-cards">
+                        <article class="result-card">
+                            <h3>Total Investment</h3>
+                            <p id="sip-total-investment" aria-label="Total amount invested">₹6,00,000</p>
+                        </article>
+                        <article class="result-card">
+                            <h3>Estimated Returns</h3>
+                            <p id="sip-returns" aria-label="Estimated returns amount">₹5,16,197</p>
+                        </article>
+                        <article class="result-card highlight">
+                            <h3>Maturity Value</h3>
+                            <p id="sip-maturity" aria-label="Total maturity value">₹11,16,197</p>
+                        </article>
+                    </div>
+                    <div class="chart-container" role="img" aria-label="SIP investment growth chart">
+                        <canvas id="sip-chart"></canvas>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- One-Time Investment Calculator -->
+        <section id="investment-calculator" class="calculator-section" aria-labelledby="investment-heading">
+            <header>
+                <h2 id="investment-heading">Lump Sum Investment Calculator - One-Time Investment Calculator</h2>
+                <p class="calculator-description">Calculate returns on your one-time investment with our compound interest calculator. Perfect for planning lump sum investments in mutual funds, fixed deposits, and other investment vehicles.</p>
+            </header>
+            <div class="calculator-content">
+                <form class="input-section" aria-label="Investment calculation inputs">
+                    <div class="input-group">
+                        <label for="invest-amount">Lump Sum Investment Amount (₹)</label>
+                        <input type="number" id="invest-amount" value="100000" min="1000" step="1000" aria-describedby="invest-amount-help">
+                        <small id="invest-amount-help">Enter your one-time investment amount</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="invest-rate">Expected Annual Return Rate (%)</label>
+                        <input type="number" id="invest-rate" value="12" min="0.1" max="50" step="0.1" aria-describedby="invest-rate-help">
+                        <small id="invest-rate-help">Expected annual return percentage</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="invest-duration">Investment Duration (Years)</label>
+                        <input type="number" id="invest-duration" value="10" min="1" max="50" step="1" aria-describedby="invest-duration-help">
+                        <small id="invest-duration-help">Investment time period in years</small>
+                    </div>
+                </form>
+                <section class="result-section" aria-label="Investment calculation results">
+                    <div class="result-cards">
+                        <article class="result-card">
+                            <h3>Total Investment</h3>
+                            <p id="invest-total-investment" aria-label="Total amount invested">₹1,00,000</p>
+                        </article>
+                        <article class="result-card">
+                            <h3>Estimated Returns</h3>
+                            <p id="invest-returns" aria-label="Estimated returns amount">₹2,10,585</p>
+                        </article>
+                        <article class="result-card highlight">
+                            <h3>Maturity Value</h3>
+                            <p id="invest-maturity" aria-label="Total maturity value">₹3,10,585</p>
+                        </article>
+                    </div>
+                    <div class="chart-container" role="img" aria-label="Investment growth chart">
+                        <canvas id="invest-chart"></canvas>
+                    </div>
+                </section>
+            </div>
+        </section>
+
+        <!-- Age Calculator -->
+        <section id="age-calculator" class="calculator-section" aria-labelledby="age-heading">
+            <header>
+                <h2 id="age-heading">Age Calculator - Calculate Your Exact Age</h2>
+                <p class="calculator-description">Calculate your exact age in years, months, and days. Find out your age at any specific date or your current age with detailed breakdowns including total days, hours, and minutes lived.</p>
+            </header>
+            <div class="calculator-content">
+                <form class="input-section" aria-label="Age calculation inputs">
+                    <fieldset class="age-mode-toggle">
+                        <legend>Age Calculation Mode</legend>
+                        <label class="toggle-option">
+                            <input type="radio" name="age-mode" value="current" checked>
+                            <span>Current Age</span>
+                        </label>
+                        <label class="toggle-option">
+                            <input type="radio" name="age-mode" value="specific">
+                            <span>Age at Specific Date</span>
+                        </label>
+                    </fieldset>
+                    
+                    <div class="input-group">
+                        <label for="birth-date">Date of Birth</label>
+                        <input type="date" id="birth-date" aria-describedby="birth-date-help">
+                        <small id="birth-date-help">Enter your birth date</small>
+                    </div>
+                    
+                    <div class="input-group" id="target-date-group" style="display: none;">
+                        <label for="target-date">Target Date</label>
+                        <input type="date" id="target-date" aria-describedby="target-date-help">
+                        <small id="target-date-help">Enter the date to calculate age at</small>
+                    </div>
+                </form>
+                <section class="result-section" aria-label="Age calculation results">
+                    <div class="age-result">
+                        <div class="age-display" role="region" aria-label="Age breakdown">
+                            <article class="age-item">
+                                <span class="age-number" id="age-years" aria-label="Years">0</span>
+                                <span class="age-label">Years</span>
+                            </article>
+                            <article class="age-item">
+                                <span class="age-number" id="age-months" aria-label="Months">0</span>
+                                <span class="age-label">Months</span>
+                            </article>
+                            <article class="age-item">
+                                <span class="age-number" id="age-days" aria-label="Days">0</span>
+                                <span class="age-label">Days</span>
+                            </article>
+                        </div>
+                        <div class="age-details" aria-label="Additional age information">
+                            <p id="age-description">You have lived for <span id="total-days">0</span> days</p>
+                            <p>You have lived for <span id="total-hours">0</span> hours</p>
+                            <p>You have lived for <span id="total-minutes">0</span> minutes</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </section>
+        </main>
+
+    <!-- FAQ Section -->
+    <section class="faq-section" aria-labelledby="faq-heading">
+        <div class="container">
+            <header>
+                <h2 id="faq-heading">Frequently Asked Questions (FAQ)</h2>
+                <p>Get answers to common questions about our financial calculators and investment planning tools.</p>
+            </header>
+            <div class="faq-grid">
+                <article class="faq-item">
+                    <h3>What is SIP and how does the SIP calculator work?</h3>
+                    <p>SIP (Systematic Investment Plan) is a method of investing in mutual funds through regular monthly contributions. Our SIP calculator uses compound interest formula to project future returns based on your monthly investment, expected return rate, and investment duration.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>How accurate are the investment calculator results?</h3>
+                    <p>Our calculators provide estimates based on mathematical formulas and your input parameters. Actual returns may vary due to market conditions, fund performance, and economic factors. These tools are for planning purposes and should not be considered as guaranteed returns.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>What is the difference between SIP and lump sum investment?</h3>
+                    <p>SIP involves regular monthly investments that help average out market volatility, while lump sum is a one-time investment. SIP is ideal for salary earners, while lump sum works when you have surplus funds to invest immediately.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>Can I use these calculators for tax planning?</h3>
+                    <p>While our calculators help estimate returns, they don't include tax implications. Consult a tax advisor for comprehensive tax planning including ELSS investments, tax deductions under Section 80C, and capital gains tax considerations.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>What is a good return rate to expect from investments?</h3>
+                    <p>Historical equity mutual fund returns in India have ranged from 10-15% annually over long periods. However, returns vary by asset class: equity funds (10-15%), debt funds (6-9%), and hybrid funds (8-12%). Choose rates based on your risk tolerance and investment goals.</p>
+                </article>
+                <article class="faq-item">
+                    <h3>How often should I review my investment calculations?</h3>
+                    <p>Review your financial goals and recalculate annually or when your income changes significantly. Market conditions and personal circumstances change, so regular reviews help ensure you're on track to meet your financial objectives.</p>
+                </article>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+            <div class="footer-info">
+                <div class="footer-section">
+                    <h3>Financial Calculator Tools</h3>
+                    <p>Free online financial planning tools to help you make informed investment decisions. Calculate SIP returns, lump sum investments, and plan your financial future.</p>
+                    <ul class="feature-list">
+                        <li>SIP Calculator with compound interest</li>
+                        <li>Lump sum investment calculator</li>
+                        <li>Age calculator with detailed breakdown</li>
+                        <li>Real-time calculation results</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>Investment Planning</h3>
+                    <p>Our calculators help with:</p>
+                    <ul>
+                        <li>Mutual fund investment planning</li>
+                        <li>Retirement planning calculations</li>
+                        <li>Goal-based investment planning</li>
+                        <li>Risk assessment and returns estimation</li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h3>About the Developer</h3>
+                    <p><strong>Bapi Kirtania</strong> - Full Stack Developer specializing in financial applications and user-friendly calculation tools.</p>
+                    <p>Connect for custom financial calculator development and web application projects.</p>
+                </div>
+            </div>
+            <div class="footer-links">
+                <a href="#" onclick="openModal('privacy')" rel="noopener">Privacy Policy</a>
+                <a href="#" onclick="openModal('terms')" rel="noopener">Terms & Conditions</a>
+                <a href="#" onclick="openModal('disclaimer')" rel="noopener">Disclaimer</a>
+                <a href="#" onclick="openModal('contact')" rel="noopener">Contact</a>
+            </div>
+            <div class="footer-credit">
+                <p>&copy; 2024 Financial Calculator. Developed by <strong>Bapi Kirtania</strong> | Free Financial Planning Tools | SIP Calculator | Investment Calculator</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="modal-overlay" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modal-title">Modal Title</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

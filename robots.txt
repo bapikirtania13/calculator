@@ -1,0 +1,20 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://yourwebsite.com/sitemap.xml
+
+# Crawl delay (optional)
+Crawl-delay: 1
+
+# Allow search engines to crawl CSS and JS files
+Allow: /styles.css
+Allow: /script.js
+
+# Block common bot paths (if you have them)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.log$
+
+# Host (replace with your actual domain)
+Host: yourwebsite.com
