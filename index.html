@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Financial Calculator - SIP, Investment & Age Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Header -->
+        <header class="header">
+            <h1>Financial Calculator</h1>
+            <p>Plan your investments and calculate your age with our simple tools</p>
+        </header>
+
+        <!-- Navigation Tabs -->
+        <nav class="nav-tabs">
+            <button class="tab-btn active" onclick="showCalculator('sip')">SIP Calculator</button>
+            <button class="tab-btn" onclick="showCalculator('investment')">One-Time Investment</button>
+            <button class="tab-btn" onclick="showCalculator('age')">Age Calculator</button>
+        </nav>
+
+        <!-- SIP Calculator -->
+        <div id="sip-calculator" class="calculator-section active">
+            <h2>SIP Calculator</h2>
+            <div class="calculator-content">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="sip-amount">Monthly Investment Amount (₹)</label>
+                        <input type="number" id="sip-amount" value="5000" min="100" step="100">
+                    </div>
+                    <div class="input-group">
+                        <label for="sip-rate">Expected Annual Return Rate (%)</label>
+                        <input type="number" id="sip-rate" value="12" min="0.1" max="50" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="sip-duration">Investment Duration (Years)</label>
+                        <input type="number" id="sip-duration" value="10" min="1" max="50" step="1">
+                    </div>
+                </div>
+                <div class="result-section">
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <h3>Total Investment</h3>
+                            <p id="sip-total-investment">₹6,00,000</p>
+                        </div>
+                        <div class="result-card">
+                            <h3>Estimated Returns</h3>
+                            <p id="sip-returns">₹5,16,197</p>
+                        </div>
+                        <div class="result-card highlight">
+                            <h3>Maturity Value</h3>
+                            <p id="sip-maturity">₹11,16,197</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="sip-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- One-Time Investment Calculator -->
+        <div id="investment-calculator" class="calculator-section">
+            <h2>One-Time Investment Calculator</h2>
+            <div class="calculator-content">
+                <div class="input-section">
+                    <div class="input-group">
+                        <label for="invest-amount">Lump Sum Investment Amount (₹)</label>
+                        <input type="number" id="invest-amount" value="100000" min="1000" step="1000">
+                    </div>
+                    <div class="input-group">
+                        <label for="invest-rate">Expected Annual Return Rate (%)</label>
+                        <input type="number" id="invest-rate" value="12" min="0.1" max="50" step="0.1">
+                    </div>
+                    <div class="input-group">
+                        <label for="invest-duration">Investment Duration (Years)</label>
+                        <input type="number" id="invest-duration" value="10" min="1" max="50" step="1">
+                    </div>
+                </div>
+                <div class="result-section">
+                    <div class="result-cards">
+                        <div class="result-card">
+                            <h3>Total Investment</h3>
+                            <p id="invest-total-investment">₹1,00,000</p>
+                        </div>
+                        <div class="result-card">
+                            <h3>Estimated Returns</h3>
+                            <p id="invest-returns">₹2,10,585</p>
+                        </div>
+                        <div class="result-card highlight">
+                            <h3>Maturity Value</h3>
+                            <p id="invest-maturity">₹3,10,585</p>
+                        </div>
+                    </div>
+                    <div class="chart-container">
+                        <canvas id="invest-chart"></canvas>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Age Calculator -->
+        <div id="age-calculator" class="calculator-section">
+            <h2>Age Calculator</h2>
+            <div class="calculator-content">
+                <div class="input-section">
+                    <div class="age-mode-toggle">
+                        <label class="toggle-option">
+                            <input type="radio" name="age-mode" value="current" checked>
+                            <span>Current Age</span>
+                        </label>
+                        <label class="toggle-option">
+                            <input type="radio" name="age-mode" value="specific">
+                            <span>Age at Specific Date</span>
+                        </label>
+                    </div>
+                    
+                    <div class="input-group">
+                        <label for="birth-date">Date of Birth</label>
+                        <input type="date" id="birth-date">
+                    </div>
+                    
+                    <div class="input-group" id="target-date-group" style="display: none;">
+                        <label for="target-date">Target Date</label>
+                        <input type="date" id="target-date">
+                    </div>
+                </div>
+                <div class="result-section">
+                    <div class="age-result">
+                        <div class="age-display">
+                            <div class="age-item">
+                                <span class="age-number" id="age-years">0</span>
+                                <span class="age-label">Years</span>
+                            </div>
+                            <div class="age-item">
+                                <span class="age-number" id="age-months">0</span>
+                                <span class="age-label">Months</span>
+                            </div>
+                            <div class="age-item">
+                                <span class="age-number" id="age-days">0</span>
+                                <span class="age-label">Days</span>
+                            </div>
+                        </div>
+                        <div class="age-details">
+                            <p id="age-description">You have lived for <span id="total-days">0</span> days</p>
+                            <p>You have lived for <span id="total-hours">0</span> hours</p>
+                            <p>You have lived for <span id="total-minutes">0</span> minutes</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-links">
+                <a href="#" onclick="openModal('privacy')">Privacy Policy</a>
+                <a href="#" onclick="openModal('terms')">Terms & Conditions</a>
+                <a href="#" onclick="openModal('disclaimer')">Disclaimer</a>
+                <a href="#" onclick="openModal('contact')">Contact</a>
+            </div>
+            <div class="footer-credit">
+                <p>&copy; 2024 Financial Calculator. Developed by <strong>Bapi Kirtania</strong></p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Modal Structure -->
+    <div id="modal-overlay" class="modal-overlay" onclick="closeModal()">
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <div class="modal-header">
+                <h2 id="modal-title">Modal Title</h2>
+                <button class="modal-close" onclick="closeModal()">&times;</button>
+            </div>
+            <div class="modal-body" id="modal-body">
+                <!-- Modal content will be inserted here -->
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
